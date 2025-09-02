@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class PersonalityTest {
+    public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
+        int score = 0;
+          Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+       System.out.println("Hello! Welcome to this personality quiz project! First thing's first! Please tell me your name");
+    String Name = myObj.nextLine();  // Read user input
+     System.out.println("Welcome to the personality quiz " + Name + "!");  // Output user input
+    System.out.println("Now " + Name + ", In this personality quiz, I'll be asking you a couple of questions. Please answer honestly to determine what score you get towards the end.");
+    System.out.println("Are you ready? Then let's begin");
+        System.out.println("1. What type do you say you're most associated to?");
+        System.out.println("A. Fire");
+        System.out.println("B. Water");
+        System.out.println("C. Grass");
+        System.out.print("Your choice (A/B/C): ");
+        String choice = input.nextLine().trim().toUpperCase();
+
+        if (choice.equals("A")) {
+            score += 1;
+        } else if (choice.equals("B")) {
+            score += 2;
+        } else if (choice.equals("C")) {
+            score += 3;
+        } else {
+            System.out.println("Invalid choice.");
+        }
+        System.out.println("2. How do you react under pressure?");
+        System.out.println("A. Explode and take action");
+        System.out.println("B. Stay calm and think it through");
+        System.out.println("C. I get very anxious, but I try to come up with a solution");
+        System.out.print("Your choice (A/B/C): ");
+        String answer2 = input.nextLine().trim().toUpperCase();
+        if (answer2.equals("A")) {
+            score += 1;
+        } else if (answer2.equals("B")) {
+            score += 2;
+    } else if (answer2.equals("C")) {
+            score += 3;
+    } else {
+            System.out.println("Invalid choice.");
+        };
+         System.out.println("3. A test is coming up. How do you study for it?");
+        System.out.println("A. Wing it, I feel confident");
+        System.out.println("B. Take it easy");
+        System.out.println("C. Study hard.");
+        System.out.print("Your choice (A/B/C): ");
+        String answer3 = input.nextLine().trim().toUpperCase();
+        if (answer3.equals("A")) {
+            score += 1;
+        } else if (answer3.equals("B")) {
+            score += 2;
+    } else if (answer3.equals("C")) {
+            score += 3;
+    } else {
+            System.out.println("Invalid choice.");
+        };
+        
+        
+        System.out.println("Your total score is: " + score);
+
+        if (score == 3) {
+            System.out.println("You are bold and passionate like fire!");
+        } else if (score == 6) {
+            System.out.println("You are calm and adaptable like water!");
+        } else if (score == 9) {
+            System.out.println("You are calm and adaptable like water!");
+        }
+
+        input.close();
+    }
+}
