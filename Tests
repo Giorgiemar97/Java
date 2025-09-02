@@ -1,0 +1,27 @@
+public static int convertHoursToMinutes(int hours) 
+{    // Check for invalid cases    
+if (hours < 0) {        return -1;    }
+     // Convert hours to minutes 
+   return hours * 60;
+
+   // Update Code : If the student's marks are greater than 50, they have passed the exam.
+ if (marks <= 50) {
+ return false;
+ }
+ else {
+ return true;
+
+ public long calculateSumOfSquares(int n) {
+       // write your code here
+       if (n>=0){
+           long sum = 0;
+           for(int i=1;i<=n;i++){
+              sum += i * i;
+           }
+               return sum;
+       }
+    
+             return -1;
+           
+           }
+       }
