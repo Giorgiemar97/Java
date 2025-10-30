@@ -1,0 +1,9 @@
+public class GameRecommender {
+    public static void main(String[] args) {
+        String[] games = {"Maple Story", "Stardew Valley", "Pokemon", "Kirby", "Heroes of Hammerwatch"};
+        
+        int randomIndex = (int)(Math.random() * games.length);
+        
+        System.out.println("I recommend " + games[randomIndex] + "!");
+    }
+}
