@@ -1,0 +1,38 @@
+import java.util.Random;
+
+public class SongOfTheDay {
+    public static void main(String[] args) {
+        // Array of songs
+        String[] songs = {
+            "The Horse and the Infant",
+            "Just a man",
+            "Full speed ahead",
+            "Open Arms",
+            "Warrior of the mind",
+            "Polyphemus",
+            "Survive",
+            "Remember them",
+            "My Goodbye",
+            "Storm",
+            "Luck runs out",
+            "Keep your friends close",
+            "Ruthlessness",
+            "Puppeteer",
+             "Wouldn't you like",
+            "Done for",
+            "There are other ways",
+            "The UnderWorld",
+            "No longer you",
+            "Monster"
+        };
+
+        // Create a Random object
+        Random random = new Random();
+
+        // Pick a random index
+        int index = random.nextInt(songs.length);
+
+        // Display the selected song
+        System.out.println("Your Epic song (Act 1) for the day is: " + songs[index]);
+    }
+}
