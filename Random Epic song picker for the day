@@ -18,12 +18,32 @@ public class SongOfTheDay {
             "Keep your friends close",
             "Ruthlessness",
             "Puppeteer",
-             "Wouldn't you like",
+            "Wouldn't you like",
             "Done for",
             "There are other ways",
             "The UnderWorld",
             "No longer you",
-            "Monster"
+            "Monster",
+            "Suffering",
+            "Different beast",
+            "Scylla",
+            "Mutiny",
+            "Thunder Bringer",
+            "Legendary",
+            "Little wolf",
+            "We'll be fine",
+            "Love in Paradise",
+            "God Games",
+            "Not sorry for loving you",
+            "Dangerous",
+            "Charybdis",
+            "Get in the water",
+            "Six hundred strike",
+            "The challenge",
+            "Hold them down",
+            "Odysseus",
+            "I can't help but wonder",
+            "Would you fall in love with me again"
         };
 
         // Create a Random object
@@ -33,6 +53,6 @@ public class SongOfTheDay {
         int index = random.nextInt(songs.length);
 
         // Display the selected song
-        System.out.println("Your Epic song (Act 1) for the day is: " + songs[index]);
+        System.out.println("Your Epic song for the day is: " + songs[index]);
     }
 }
