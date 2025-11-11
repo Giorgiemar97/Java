@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class UnemploymentMotivator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.println("Hello, you wonderful person! I hope you're having a good day today!");
+        System.out.println("I heard about your unemployment. While the circumstances may not be the best, I am here to help you!");
+        System.out.println();
+        
+        System.out.print("First, how are you feeling today on a scale from 1 to 10? ");
+        int feeling = scanner.nextInt();
+        scanner.nextLine(); 
+        System.out.println();
+        
+        if (feeling >= 7) {
+            System.out.println("That's great! I'm so glad to hear you're feeling good today!");
+        } else if (feeling >= 4) {
+            System.out.println("I understand. Some days are harder than others, but you're doing your best!");
+        } else {
+            System.out.println("I am sorry to hear that. Things can only start looking better from now though, right?");
+        }
+        System.out.println();
+        
+        System.out.print("Have you applied to any jobs today? (yes/no) ");
+        String appliedJobs = scanner.nextLine().trim().toLowerCase();
+        System.out.println();
+        
+        if (appliedJobs.equals("yes")) {
+            System.out.println("That's wonderful! Every application is a step closer to your next opportunity. Keep up the great work!");
+        } else {
+            System.out.println("That's okay! Remember, even small steps count. Maybe today you could look at just one or two job postings?");
+        }
+        System.out.println();
+
+        System.out.print("Have you gotten any interviews recently? (yes/no) ");
+        String gotInterviews = scanner.nextLine().trim().toLowerCase();
+        System.out.println();
+        
+        if (gotInterviews.equals("yes")) {
+            System.out.println("That's fantastic news! Getting an interview means someone sees your potential. You should be proud!");
+        } else {
+            System.out.println("Don't get discouraged! The right opportunity is out there waiting for you. Keep applying and stay persistent!");
+        }
+        System.out.println();
+        
+        System.out.print("Have you been taking care of yourself? (yes/no) ");
+        String selfCare = scanner.nextLine().trim().toLowerCase();
+        System.out.println();
+        
+        if (selfCare.equals("yes")) {
+            System.out.println("I'm so proud of you! Taking care of yourself is just as important as the job search. You're doing amazing!");
+        } else {
+            System.out.println("Please remember that your well-being matters. Take time to eat well, rest, and do things that make you happy. You deserve it!");
+        }
+        System.out.println();
+        
+        System.out.println("Being unemployed is difficult, but just know it's not forever.");
+        System.out.println("You will find a job. You can do this! I believe in you!");
+     
+        
+        scanner.close();
+    }
+}
