@@ -1,0 +1,115 @@
+import java.util.*;
+import java.io.*;
+
+public class StatisticalDataAnalyzer {
+    
+    public static class Statistics {
+        private double mean;
+        private double median;
+        private double standardDeviation;
+        private double min;
+        private double max;
+        private int count;
+        
+        public Statistics(double mean, double median, double stdDev, double min, double max, int count) {
+            this.mean = mean;
+            this.median = median;
+            this.standardDeviation = stdDev;
+            this.min = min;
+            this.max = max;
+            this.count = count;
+        }
+        
+        @Override
+        public String toString() {
+            return String.format(
+                "Statistics:\n" +
+                "  Count: %d\n" +
+                "  Mean: %.4f\n" +
+                "  Median: %.4f\n" +
+                "  Standard Deviation: %.4f\n" +
+                "  Min: %.4f\n" +
+                "  Max: %.4f",
+                count, mean, median, standardDeviation, min, max
+            );
+        }
+        
+        public double getMean() { return mean; }
+        public double getMedian() { return median; }
+        public double getStandardDeviation() { return standardDeviation; }
+        public double getMin() { return min; }
+        public double getMax() { return max; }
+        public int getCount() { return count; }
+    }
+    
+    public static Statistics analyze(List<Double> data) {
+        if (data == null || data.isEmpty()) {
+            throw new IllegalArgumentException("Data cannot be null or empty");
+        }
+        
+        int n = data.size();
+        
+        
+        double sum = 0;
+        for (double value : data) {
+            sum += value;
+        }
+        double mean = sum / n;
+        
+        
+        List<Double> sorted = new ArrayList<>(data);
+        Collections.sort(sorted);
+        double median;
+        if (n % 2 == 0) {
+            median = (sorted.get(n/2 - 1) + sorted.get(n/2)) / 2.0;
+        } else {
+            median = sorted.get(n/2);
+        }
+        
+        // Calculate standard deviation
+        double sumSquaredDiff = 0;
+        for (double value : data) {
+            sumSquaredDiff += Math.pow(value - mean, 2);
+        }
+        double standardDeviation = Math.sqrt(sumSquaredDiff / n);
+        
+      
+        double min = Collections.min(data);
+        double max = Collections.max(data);
+        
+        return new Statistics(mean, median, standardDeviation, min, max, n);
+    }
+    
+    public static List<Double> readFromCSV(String filename) throws IOException {
+        List<Double> data = new ArrayList<>();
+        BufferedReader reader = new BufferedReader(new FileReader(filename));
+        String line;
+        
+        while ((line = reader.readLine()) != null) {
+            String[] values = line.split(",");
+            for (String value : values) {
+                try {
+                    data.add(Double.parseDouble(value.trim()));
+                } catch (NumberFormatException e) {
+                    
+                }
+            }
+        }
+        reader.close();
+        return data;
+    }
+    
+    public static void main(String[] args) {
+        // Example usage with sample data
+        List<Double> sampleData = Arrays.asList(
+            24.5, 45.2, 12.8, 67.3, 34.1, 
+            56.7, 28.9, 41.3, 19.6, 52.4,
+            38.7, 44.9, 31.2, 50.8, 48.3
+        );
+        
+        System.out.println("Analyzing sample dataset...\n");
+        Statistics stats = analyze(sampleData);
+        System.out.println(stats);
+        
+    }
+}
